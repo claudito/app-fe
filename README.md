@@ -71,9 +71,14 @@ Este proyecto está configurado para ejecutarse en **contenedores Docker** con:
         composer install
     ```
 
-    Ejecutar Migraciones:
+    Ejecutar Migraciones(Crear Tablas):
     ```bash
         php artisan migrate
+    ```
+
+    Crear Usuario:
+    ```bash
+        php artisan db:seed
     ```
 
     Instalar Node y Npm:
