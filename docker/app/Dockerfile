@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     unzip \
     curl \
+    gnupg \
     libzip-dev \
     libpng-dev \
     libjpeg-dev \
@@ -33,6 +34,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+# Instalar Node.js 20 (desde NodeSource)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+  && apt-get install -y nodejs \
+  && npm install -g npm@latest \
+  && npm install -g yarn
+
 # Instalar Composer desde imagen oficial
 COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
 
@@ -52,6 +59,9 @@ RUN composer install --no-dev --no-scripts --prefer-dist --no-interaction --no-a
 
 # Copiar el resto del proyecto
 COPY . .
+
+# Instalar dependencias de Node si package.json existe
+RUN if [ -f package.json ]; then yarn install && yarn build || true; fi
 
 # Optimizar autoload
 RUN composer dump-autoload --optimize
