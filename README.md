@@ -32,7 +32,7 @@ Este proyecto está configurado para ejecutarse en **contenedores Docker** con:
         cp .env.example .env
     ```
 
-    # Verifica que en .env tengas los valores correctos para la base de datos (el host debe ser db):
+    #Verifica que en .env tengas los valores correctos para la base de datos (el host debe ser db):
     ```bash
         DB_CONNECTION=mysql
         DB_HOST=db
