@@ -52,6 +52,10 @@ Este proyecto está configurado para ejecutarse en **contenedores Docker** con:
      - app → Contenedor Laravel + Apache : http://localhost:8080
      - db → Contenedor MySQL 8
      - adminer → Cliente web para la base de datos : http://localhost:8081
+  
+     User y Pass app:
+     - User: test@example.com
+     - Pass : 12345678
 
 4. **Acceder a la base de datos**
     - URL: http://localhost:8081
