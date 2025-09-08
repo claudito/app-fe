@@ -95,3 +95,26 @@ Este proyecto está configurado para ejecutarse en **contenedores Docker** con:
     ```bash
        docker compose down
     ```
+
+
+## ⚙️ Pruebas archivos PHP
+
+1.  **Archivo .php**
+    ```bash
+       http://localhost:8080/info.php
+    ```
+2.  **Pruebas de Ruta pruebas**
+   
+   ### /routes/pruebas.php
+
+    - Hola Mundo:
+    ```bash
+        #pruebas/hola-mundo
+       http://localhost:8080/pruebas/hola-mundo
+    ```
+
+    - Suma de 2 Números
+    ```bash
+        #pruebas/hola-mundo
+       http://localhost:8080/pruebas/operacion
+    ```
